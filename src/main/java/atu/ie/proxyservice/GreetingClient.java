@@ -8,10 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
         name = "greetingClient",
         url = "${greeting.service.base-url}"
 )
-public class GreetingClient {
 
+public interface GreetingClient {
     @GetMapping("/api/greet/{name}")
-    String call_greet(@PathVariable String name){
-     return "Hello "+name+" from service A!";
-    }
+    String call_greet(@PathVariable String name);
 }
